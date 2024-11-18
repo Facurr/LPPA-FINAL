@@ -20,7 +20,7 @@ var validateName = function () {
 };
 
 var validateEmail = function () {
-    var error = document.getElementById("email-error");
+    var error = document.getElementById("emailError");
 
     if (emailInput.value.includes("@") && emailInput.value.includes(".")) {
         error.style.display = "none";
@@ -61,13 +61,22 @@ contactForm.addEventListener('submit', function (event) {
     if (name && email && msg) {
         // Preparar el contenido del correo
         var subject = 'LPPA - SIMON GAME';
-        var body = `Hola ${nameInput.value} !
-                    \n${messageInput.value}.`;
+        var body = `Hola ${nameInput.value}!\n${messageInput.value}`;
 
-        var mailToLink = `mailto:${emailInput.value}?subject=${encodeURIComponent(subject)}
-                          &body=${encodeURIComponent(body)}`;
-
-        // Abre el cliente de correo predeterminado
-        window.location.href = mailToLink;
+        // Usar EmailJS para enviar el correo
+        emailjs.send("service_zg3kwoh", "template_s2w9s34", {
+            from_name: nameInput.value,
+            from_email: emailInput.value,
+            message: messageInput.value,
+        }).then(function(response) {
+            alert("Correo enviado exitosamente.");
+        }, function(error) {
+            alert("Error al enviar correo: " + JSON.stringify(error));
+        });
     }
 });
+
+
+
+
+
