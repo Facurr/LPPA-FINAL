@@ -1,0 +1,97 @@
+@font-face {
+  font-family: 'Retro Gaming';
+  src: url('assets/Retro\ Gaming.ttf');
+}
+
+body {
+  font-family: 'Retro Gaming', cursive;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  min-height: 625px;
+  margin: 0;
+  /* Asegura que el body ocupe al menos el 100% del viewport en altura */
+  min-height: 100vh;
+}
+
+header,
+footer {
+  background-color: #000;
+  padding: 5px;
+  color: #4dff00;
+  text-align: center;
+  /* Evita que el header y footer se reduzcan en altura si el contenido es grande */
+  flex-shrink: 0;
+}
+
+h1 {
+  margin: 5px;
+}
+
+nav {
+  background-color: #000;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  color: #4dff00;
+}
+
+main {
+  /* Hace que el main ocupe la pantalla restante */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Menu Hamburguesa */
+.menuToggle {
+  display: none;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #4dff00;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 535px) {
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menuToggle {
+    margin-left: 15px;
+    padding-top: 15px;
+    display: block;
+  }
+
+  .topnav {
+    display: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .topnav a {
+    display: block;
+    padding: 10px;
+  }
+
+  .responsive {
+    display: block;
+  }
+
+}

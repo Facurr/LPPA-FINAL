@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contacto.css">
+</head>
+
+<body>
+    <header>
+        <h1>SIMON GAME</h1>
+
+        <div class="menuToggle">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+        </div>
+
+        <nav class="topnav">
+            <a href="index.html">Juego</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://github.com/Facurr/LPPA-FINAL" target="_blank">Repositorio</a>
+        </nav>
+    </header>
+
+    <main>
+        <form id="contactForm" style="margin: 50px auto;">
+            <h2>Formulario de Contacto</h2>
+
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+            <span id="nameError" data-name="Error en el Nombre" class="formerror"></span>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+            <span id="emailError" data-name="Error en Email" class="formerror"></span>
+
+            <label for="message">Mensaje:</label>
+            <textarea name="message" id="message" rows="5"></textarea>
+            <span id="messageError" data-name="Error en el Mensaje" class="formerror"></span>
+
+            <button type="submit" value="contactar">Enviar</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>Facundo Rouille - 2024</p>
+    </footer>
+    <script src="contacto.js"></script>
+    <script src="shared.js"></script>
+</body>
+
+</html>

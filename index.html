@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simon Game</title>
+    <link rel="stylesheet" href="simon.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>SIMON GAME</h1>
+
+        <div class="menuToggle">
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+            <div class="hamburger"></div>
+        </div>
+
+        <nav class="topnav">
+            <a href="index.html">Juego</a>
+            <a id="resultBtn" href="#">Resultados</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="https://github.com/Facurr/LPPA-FINAL" target="_blank">Repositorio</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="board">
+            <div id="message" class="message"></div>
+            <div id="nameForm">
+                <input type="text" id="name" placeholder="Ingresa tu nombre">
+                <span id="checkicon" class="icon">&#10004;</span>
+                <span id="xIcon" class="icon">&#10006;</span>
+                <p><span id="nameerror" data-name="Error en nombre" class="error">Debe ingresar un nombre válido</span>
+                </p>
+            </div>
+            <div class="row">
+                <div class="results">Tiempo:
+                    <span id="playedtime">0</span>
+                </div>
+                <div class="results">Acertados:
+                    <span id="score">0</span>
+                </div>
+            </div>
+
+            <div id="simonGame">
+                <div class="outercircle">
+                    <div class="row">
+                        <div class="simonbtn" id="yellow"></div>
+                        <div class="simonbtn" id="blue"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="simonbtn" id="red"></div>
+                        <div class="simonbtn" id="green"></div>
+                    </div>
+                    <div class="innercircle">
+                        <div class="row">
+                            <button id="start" class="btn">Play</button>
+                        </div>
+                        <div class="row">
+                            <div class="leveldisplay">
+                                <p><span id="level">0</span></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <button id="reset" class="btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="popupResult" class="board">
+            <span id="closeResults">&#10006;</span>
+            <table>
+                <thead>
+                    <tr class="resultHeaderRow">
+                        <th id="headdate" style="width: 110px;">Fecha</th>
+                        <th id="headname">Nombre</th>
+                        <th id="headpoints">Puntos ↑</th>
+                    </tr>
+                </thead>
+                <tbody id="bodyresult">
+                </tbody>
+            </table>
+            <div id="pagination">
+                <p>
+                    <span class="arrow" id="backpage">
+                        &lt;
+                    </span>
+                    <span id="currentpage">
+                        1
+                    </span>
+                    <span class="arrow" id="nextpage">
+                        >
+                    </span>
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Facundo Rouille - 2024</p>
+    </footer>
+    <div id="popup" class="popup">
+        <div class="popupContent">
+            <h2>GAME OVER</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nivel</th>
+                        <th>Acertados</th>
+                        <th>Tiempo</th>
+                        <th>Puntaje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="firstrow">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button id="closeBtn" class="btn">Cerrar</button>
+        </div>
+    </div>
+    <script src="simon.js"></script>
+    <script src="shared.js"></script>
+</body>
+
+</html>
